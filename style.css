@@ -1,0 +1,327 @@
+/* Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar */
+nav {
+  position: sticky;
+  top: 0;
+  background: #0d47a1;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+nav h1 {
+  color: white;
+  font-size: 22px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+/*navbar blur*/
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(13, 71, 161, 0.6); /* warna biru agak transparan */
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(25px); /* blur kuat */
+  -webkit-backdrop-filter: blur(25px); /* untuk Safari */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Section */
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  color: #0d47a1;
+  margin-bottom: 20px;
+}
+
+section p {
+  line-height: 1.6;
+}
+
+/* Struktur */
+.struktur-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.struktur-list li {
+  background: #e3f2fd;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-left: 5px solid #0d47a1;
+}
+
+/* Contact */
+.contact-info {
+  background: #e3f2fd;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0d47a1;
+  color: white;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin: 10px 0 0;
+  }
+}
+
+/* Layout untuk bagian Home */
+.home-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.home-content .text {
+  flex: 1;
+}
+
+.home-content .image {
+  flex: 1;
+  text-align: center;
+}
+
+.home-content .image img {
+  max-width: 100%;
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout Sejarah */
+.sejarah-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.sejarah-content .image {
+  flex: 1;
+  text-align: center;
+}
+
+.sejarah-content .image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sejarah-content .text {
+  flex: 1;
+}
+
+/* Layout Sejarah */
+.sejarah-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.sejarah-content .image {
+  flex: 1;
+  text-align: center;
+}
+
+.sejarah-content .image img {
+  max-width: 100%;
+  height: 300px;
+  border-radius: 2cqmax;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sejarah-content .text {
+  flex: 1;
+}
+
+.anggota {
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.anggota:hover {
+  background: #bbdefb;
+}
+
+.detail {
+  display: none;
+  background: #f1f8ff;
+  margin-top: 8px;
+  padding: 10px;
+  border-left: 3px solid #1976d2;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.anggota.active .detail {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.budak {
+  background: #f1f8ff;
+}
+
+.detail ul {
+  margin-top: 8px;
+  padding-left: 25px;
+  list-style-type: disc;
+}
+
+.detail ul li {
+  margin-bottom: 5px;
+  color: #0d47a1;
+  font-weight: 500;
+}
+
+.anggota strong {
+  color: #0d47a1;
+}
+
+/*paragraf baru konsisten cantik*/
+#tugas,
+#kegiatan,
+#tanggal-penting,
+#tugas-departemen {
+  background: #e3f2fd;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#tugas-departemen ul {
+  margin-top: 10px;
+  padding-left: 25px;
+  list-style-type: disc;
+}
+
+#tugas-departemen ul li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/*visi dan misi*/
+#visi,
+#misi {
+  background: #e3f2fd;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#misi ul {
+  margin-top: 10px;
+  padding-left: 25px;
+  list-style-type: disc;
+}
+
+#misi ul li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* --- Logo di navbar --- */
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.logos {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.logos img {
+  height: 60px;
+  width: 60px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* --- Teks sekolah di bawah area biru --- */
+.school-name-bawah {
+  text-align: left;
+  padding: 8px 35px;
+  background: #fff;
+  font-weight: 600;
+  color: #0d47a1;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e3f2fd;
+}
