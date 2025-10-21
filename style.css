@@ -1,4 +1,4 @@
-/* Reset & Font */
+/* 🌐 RESET & FONT */
 * {
   margin: 0;
   padding: 0;
@@ -12,16 +12,20 @@ body {
   color: #333;
 }
 
-/* Navbar */
+/* 🌐 NAVBAR */
 nav {
   position: sticky;
   top: 0;
-  background: #0d47a1;
+  background: rgba(13, 71, 161, 0.6); /* biru transparan */
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
 }
 
 nav h1 {
@@ -39,23 +43,49 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
-/*navbar blur*/
-nav {
-  position: sticky;
-  top: 0;
-  background: rgba(13, 71, 161, 0.6); /* warna biru agak transparan */
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  backdrop-filter: blur(25px); /* blur kuat */
-  -webkit-backdrop-filter: blur(25px); /* untuk Safari */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
+
+/* tombol hamburger (hidden default) */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 25px;
+  color: white;
 }
 
-/* Section */
+/* --- Logo di navbar --- */
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.logos {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.logos img {
+  height: 60px;
+  width: 60px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* --- Teks sekolah di bawah navbar --- */
+.school-name-bawah {
+  text-align: left;
+  padding: 8px 35px;
+  background: #fff;
+  font-weight: 600;
+  color: #0d47a1;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e3f2fd;
+}
+
+/* 🌐 SECTION */
 section {
   padding: 80px 20px;
   max-width: 1000px;
@@ -79,7 +109,7 @@ section p {
   line-height: 1.6;
 }
 
-/* Struktur */
+/* 🌐 STRUKTUR */
 .struktur-list {
   list-style: none;
   padding-left: 0;
@@ -93,13 +123,14 @@ section p {
   border-left: 5px solid #0d47a1;
 }
 
-/* Contact */
+/* 🌐 CONTACT */
 .contact-info {
   background: #e3f2fd;
   padding: 20px;
   border-radius: 8px;
 }
 
+/* 🌐 FOOTER */
 footer {
   text-align: center;
   padding: 20px;
@@ -108,19 +139,7 @@ footer {
   margin-top: 40px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav a {
-    margin: 10px 0 0;
-  }
-}
-
-/* Layout untuk bagian Home */
+/* 🌐 HOME LAYOUT */
 .home-content {
   display: flex;
   align-items: center;
@@ -144,31 +163,7 @@ footer {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Layout Sejarah */
-.sejarah-content {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.sejarah-content .image {
-  flex: 1;
-  text-align: center;
-}
-
-.sejarah-content .image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.sejarah-content .text {
-  flex: 1;
-}
-
-/* Layout Sejarah */
+/* 🌐 SEJARAH LAYOUT */
 .sejarah-content {
   display: flex;
   align-items: center;
@@ -184,7 +179,7 @@ footer {
 .sejarah-content .image img {
   max-width: 100%;
   height: 300px;
-  border-radius: 2cqmax;
+  border-radius: 20px; /* diganti dari 2cqmax */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -192,6 +187,7 @@ footer {
   flex: 1;
 }
 
+/* 🌐 ANGGOTA */
 .anggota {
   position: relative;
   cursor: pointer;
@@ -222,7 +218,6 @@ footer {
     opacity: 0;
     transform: translateY(-5px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -249,7 +244,7 @@ footer {
   color: #0d47a1;
 }
 
-/*paragraf baru konsisten cantik*/
+/* 🌐 KONTEN TAMBAHAN (tugas, kegiatan, dsb) */
 #tugas,
 #kegiatan,
 #tanggal-penting,
@@ -272,7 +267,7 @@ footer {
   line-height: 1.5;
 }
 
-/*visi dan misi*/
+/* 🌐 VISI & MISI */
 #visi,
 #misi {
   background: #e3f2fd;
@@ -293,42 +288,9 @@ footer {
   line-height: 1.5;
 }
 
-/* --- Logo di navbar --- */
-.logo-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.logos {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.logos img {
-  height: 60px;
-  width: 60px;
-  border-radius: 8px;
-  object-fit: contain;
-}
-
-/* --- Teks sekolah di bawah area biru --- */
-.school-name-bawah {
-  text-align: left;
-  padding: 8px 35px;
-  background: #fff;
-  font-weight: 600;
-  color: #0d47a1;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  border-bottom: 2px solid #e3f2fd;
-}
-
-
 /* 🌐 RESPONSIVE DESIGN */
-/* Untuk layar tablet dan HP */
+
+/* Tablet dan HP */
 @media (max-width: 768px) {
   body {
     font-size: 15px;
@@ -361,15 +323,10 @@ footer {
     text-align: center;
   }
 
-  /* tombol hamburger */
   .menu-toggle {
     display: block;
-    cursor: pointer;
-    font-size: 25px;
-    color: white;
   }
 
-  /* gambar & paragraf sejajar diubah jadi tumpuk */
   .content-with-image {
     flex-direction: column;
   }
@@ -380,11 +337,12 @@ footer {
   }
 }
 
-/* Untuk layar HP kecil (kurang dari 480px) */
+/* HP kecil */
 @media (max-width: 480px) {
   h2 {
     font-size: 20px;
   }
+
   p {
     font-size: 14px;
   }
